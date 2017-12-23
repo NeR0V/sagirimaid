@@ -14,6 +14,7 @@ var bot = new Discord.Client();
 
 function loadCmds() {
     delete require.cache[require.resolve('./commands/${f}')];
+}
 
     bot.on("guildMemberAdd", function (member) {
         member.guild.channels.find("name", "chat").sendEmbed(embed);
@@ -104,4 +105,3 @@ function loadCmds() {
     });
 
     bot.login(TOKEN);
-}
