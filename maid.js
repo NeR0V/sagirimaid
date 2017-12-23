@@ -51,14 +51,16 @@ bot.on("ready", function () {
             message.author.send("Essa palavra é banido deste servidor, não use ela!")
         }
 
-        if (!userData[sender.id + message.guild.id]) userData[sender.id + message.guild.id] = {
-        if (!userData[sender.id + message.guild.id].money) userData[sender.id + message.guild.id].money = 1000;
-
-            fs.writeFile("Storage/userData.json", JSON.stringify(userData), (err) => {
-                if (err) console.error(err);
-            })
+        if (!userData[sender.id]) userData[sender.id] = {
+            messagesSent: 0
         }
 
+        userData[sender.id].messagesSent++;
+
+        fs.writeFile("Storage/userData.sjon", JSON.stringify(userData), (err) => {
+            if (err) console.error(err);
+        });
+ 
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
         }
