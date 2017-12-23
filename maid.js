@@ -72,7 +72,7 @@ bot.on("ready", function () {
             message.channel.sendMessage("tudo. e vc? " + message.author.toString());
         }
 
-        if (message.content === "元気だったかいさぎり？") {
+        if (message.content === "元気だったかさぎり？") {
             message.channel.sendMessage("私わお兄ちゃんと一緒ならいつだって元気だよ。(o^▽^o)");
         }
 
