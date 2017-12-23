@@ -40,6 +40,8 @@ bot.on("ready", function () {
 
     bot.user.setGame('Peçam ajuda para mim <3');
 
+    console.log(bot.user.username);
+
 });
 
     bot.on("message", function (message) {
@@ -81,6 +83,13 @@ bot.on("ready", function () {
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
         }
+
+        if (message.content === "$loop") {
+      var interval = setInterval (function () {
+        message.channel.send("Teste")
+      }, 1 * 1000);
+    }
+});
 
         if (message.content === "tudo bom?") {
             message.channel.sendMessage("tudo. e vc? " + message.author.toString());
