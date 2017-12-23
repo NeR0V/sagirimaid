@@ -62,7 +62,7 @@ bot.on("ready", function () {
             loadCmds()
         }
 
-        if(msg === prefix + "msgenviada") {
+        if(msg === prefix + "mystats") {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
         }
 
