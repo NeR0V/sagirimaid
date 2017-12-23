@@ -11,40 +11,39 @@ var fortunes = [
 ];
 
 var bot = new Discord.Client();
+var fs = require('fs');
 
-function loadCmds() {
-    delete require.cache[require.resolve('./commands/${f}')];
-}
+var userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8
+var commandsList = JSON.parse(fs.readFileSync('Storage/commands.txt', 'utf8'));
 
-    bot.on("guildMemberAdd", function (member) {
-        member.guild.channels.find("name", "chat").sendEmbed(embed);
-        var embed = new Discord.RichEmbed()
-        .addField("Seja bem-vindo(a) ao servidor NeR0's Playground", "Leia nossas #regras ! " + "É um prazer em recebe-lo " + member.toString() + " !")
-        .addField("Dono", "NeR0", true)
-        .addField("Feliz natal à todos!", "Boas Festas", true)
-        .setColor(0x8807df)
-        .setImage("https://78.media.tumblr.com/37f88d4b8d538adf80049d5ffefad2e1/tumblr_ouqgu127i01wwga3uo1_500.gif");
-    });
 
-    bot.on("ready", function () {
-        console.log("Carregando...");
+bot.on("guildMemberAdd", function (member) {
+    member.guild.channels.find("name", "chat").sendEmbed(embed);
+    var embed = new Discord.RichEmbed()
+    .addField("Seja bem-vindo(a) ao servidor NeR0's Playground", "Leia nossas #regras ! " + "É um prazer em recebe-lo " + member.toString() + " !")
+    .addField("Dono", "NeR0", true)
+    .addField("Feliz natal à todos!", "Boas Festas", true)
+    .setColor(0x8807df)
+    .setImage("https://78.media.tumblr.com/37f88d4b8d538adf80049d5ffefad2e1/tumblr_ouqgu127i01wwga3uo1_500.gif");
+});
 
-        bot.user.setStatus('online');
+bot.on("ready", function () {
+    console.log("Carregando...");
 
-        bot.user.setGame('Peçam ajuda para mim <3');
+    bot.user.setStatus('online');
 
-    });
+    bot.user.setGame('Peçam ajuda para mim <3');
 
-    loadCmds();
+}); 
 
     bot.on("message", function (message) {
         if (message.author.equals(bot.user)) return;
 
-        if (msg === PREFIX + "reload") {
-            message.channel.send({ embed: { description: "Todos os comandos foram recarregados!" } })
-            message.channel.send('Todos os comandos foram recarregados!')
-            loadCmds()
+        if (msg --- PREFIX + "help") {
+
+            message.channel.send(commandsList)
         }
+
 
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
@@ -67,7 +66,7 @@ function loadCmds() {
         var args = message.content.substring(PREFIX.length).split(" ");
 
         switch (args[0].toLowerCase()) {
-            case "mal":
+            case "mal":                                                 
                 var mel = new Discord.RichEmbed()
                     .setTitle("MyAnimeList.net")
                     .setAuthor("NeR0", "https://i.imgur.com/qXbSFYY.png")
