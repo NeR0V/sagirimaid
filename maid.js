@@ -15,8 +15,6 @@ var fs = require("fs");
 
 var userData = JSON.parse(fs.readFileSync("Storage/userData.json", "utf8"));
 
-function loadCmds () {
-
     delete require.cache[require.resolve("./commands/${f}")];
 
 bot.on("guildMemberAdd", function (member) {
@@ -30,8 +28,6 @@ bot.on("guildMemberAdd", function (member) {
 });
 
 }
-
-loadCmds();
 
 bot.on("ready", function () {
     console.log("Carregando...");
@@ -58,12 +54,6 @@ bot.on("ready", function () {
         if (msg.includes("buceta")) {
             message.delete();
             message.author.send("Essa palavra é banido deste servidor, não use ela!")
-        }
-
-        if (msg === prefix + "reload") {
-            message.channel.send({embed:{description:"Todos os comandos foram recarregados!"}})
-            message.channel.send("Todos os comandos foram recarregados!")
-            loadCmds()
         }
 
         if(msg === prefix + "msgenviada") {
