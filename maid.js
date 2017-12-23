@@ -17,8 +17,6 @@ var userData = JSON.parse(fs.readFileSync("Storage/userData.json", "utf8"));
 
 function loadCmds () {
 
-    delete require.cache[require.resolve("./commands/${f}")];
-
 bot.on("guildMemberAdd", function (member) {
     member.guild.channels.find("name", "chat").sendEmbed(embed);
     var embed = new Discord.RichEmbed()
