@@ -11,6 +11,10 @@ var fortunes = [
 ];
 
 var bot = new Discord.Client();
+var fs = require("fs");
+
+var userData = JSON.parse(fs.readFileSync("Storage/userData.json", "utf8"));
+
 
 bot.on("guildMemberAdd", function (member) {
     member.guild.channels.find("name", "chat").sendEmbed(embed);
@@ -45,6 +49,14 @@ bot.on("ready", function () {
         if (msg.includes("buceta")) {
             message.delete();
             message.author.send("Essa palavra é banido deste servidor, não use ela!")
+        }
+
+        if (!userData[sender.id + message.guild.id]) userData[sender.id + message.guild.id] = {
+        if (!userData[sender.id + message.guild.id].money) userData[sender.id + message.guild.id].money = 1000;
+
+            fs.writeFile("Storage/userData.json", JSON.stringify(userData), (err) => {
+                if (err) console.error(err);
+            })
         }
 
         if (message.content === "eae") {
