@@ -34,6 +34,19 @@ bot.on("ready", function () {
     bot.on("message", function (message) {
         if (message.author.equals(bot.user)) return;
 
+        var msg = message.content;
+        var sender = message.author;
+        var prefix = "."
+
+        if (sender.id === "393547358387830794") {
+            return;
+        }
+
+        if (msg.includes("buceta")) {
+            message.delete();
+            message.author.send("Essa palavra é banido deste servidor, não use ela!")
+        }
+
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
         }
