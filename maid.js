@@ -59,12 +59,8 @@ bot.on("ready", function () {
         }
 
         if (msg === prefix + "reload") {
-            message.channel.send({embed:{description:"Todos os comandos foram recarregados!"}})
-            message.channel.send("Todos os comandos foram recarregados!")
-            loadCmds()
-        }
-        
-        if(msg === prefix + "mystat") {
+
+        if(msg === prefix + "msgenviada") {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
         }
 
