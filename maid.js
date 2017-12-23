@@ -15,10 +15,6 @@ var fs = require("fs");
 
 var userData = JSON.parse(fs.readFileSync("Storage/userData.json", "utf8"));
 
-function loadCmds () {
-
-    delete require.cache[require.resolve("./commands/${f}")];
-
 bot.on("guildMemberAdd", function (member) {
     member.guild.channels.find("name", "chat").sendEmbed(embed);
     var embed = new Discord.RichEmbed()
@@ -28,10 +24,6 @@ bot.on("guildMemberAdd", function (member) {
     .setColor(0x8807df)
     .setImage("https://78.media.tumblr.com/37f88d4b8d538adf80049d5ffefad2e1/tumblr_ouqgu127i01wwga3uo1_500.gif");
 });
-
-}
-
-loadCmds();
 
 bot.on("ready", function () {
     console.log("Carregando...");
@@ -56,12 +48,6 @@ bot.on("ready", function () {
         if (msg.includes("buceta")) {
             message.delete();
             message.author.send("Essa palavra é banido deste servidor, não use ela!")
-        }
-
-        if (msg === prefix + "reload") {
-            message.channel.send({embed:{description:"Todos os comandos foram recarregados!"}})
-            message.channel.send("Todos os comandos foram recarregados!")
-            loadCmds()
         }
 
         if(msg === prefix + "msgenviada") {
