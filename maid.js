@@ -89,7 +89,6 @@ bot.on("ready", function () {
         message.channel.send("Teste")
       }, 1 * 1000);
     }
-});
 
         if (message.content === "tudo bom?") {
             message.channel.sendMessage("tudo. e vc? " + message.author.toString());
