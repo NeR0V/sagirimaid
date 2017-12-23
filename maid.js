@@ -25,8 +25,6 @@ bot.on("guildMemberAdd", function (member) {
     .setImage("https://78.media.tumblr.com/37f88d4b8d538adf80049d5ffefad2e1/tumblr_ouqgu127i01wwga3uo1_500.gif");
 });
 
-}
-
 bot.on("ready", function () {
     console.log("Carregando...");
 
