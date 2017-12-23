@@ -69,8 +69,7 @@ bot.on("ready", function () {
             message.channel.send("123")
          }, 1 * 1000); 
       }
-  });
-
+        
         if(msg === prefix + "mystat") {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
         }
