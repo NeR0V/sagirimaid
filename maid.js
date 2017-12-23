@@ -11,11 +11,6 @@ var fortunes = [
 ];
 
 var bot = new Discord.Client();
-var fs = require('fs');
-
-var userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
-var commandsList = JSON.parse(fs.readFileSync('Storage/commands.txt', 'utf8'));
-
 
 bot.on("guildMemberAdd", function (member) {
     member.guild.channels.find("name", "chat").sendEmbed(embed);
@@ -38,11 +33,6 @@ bot.on("ready", function () {
 
     bot.on("message", function (message) {
         if (message.author.equals(bot.user)) return;
-
-        if (msg === PREFIX + "help") {
-
-            message.channel.send(commandsList)
-        }
 
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
