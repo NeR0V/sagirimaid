@@ -13,7 +13,7 @@ var fortunes = [
 var bot = new Discord.Client();
 var fs = require('fs');
 
-var userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8
+var userData = JSON.parse(fs.readFileSync('Storage/userData.json', 'utf8'));
 var commandsList = JSON.parse(fs.readFileSync('Storage/commands.txt', 'utf8'));
 
 
