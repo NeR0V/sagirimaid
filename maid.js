@@ -39,11 +39,10 @@ bot.on("ready", function () {
     bot.on("message", function (message) {
         if (message.author.equals(bot.user)) return;
 
-        if (msg --- PREFIX + "help") {
+        if (msg === PREFIX + "help") {
 
             message.channel.send(commandsList)
         }
-
 
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
