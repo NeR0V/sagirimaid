@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+﻿const Discord = require("discord.js");
 
 const TOKEN = "MzkzNTQ3MzU4Mzg3ODMwNzk0.DR3XPQ.GxSHTCJ2leKtj8Z3AL7Voj-6vQk";
 const PREFIX = ".";
@@ -33,7 +33,7 @@ bot.on("ready", function () {
 
     bot.user.setGame('Peçam ajuda para mim <3');
 
-}); 
+});
 
     bot.on("message", function (message) {
         if (message.author.equals(bot.user)) return;
@@ -57,10 +57,10 @@ bot.on("ready", function () {
 
         userData[sender.id].messagesSent++;
 
-        fs.writeFile("Storage/userData.sjon", JSON.stringify(userData), (err) => {
+        fs.writeFile("Storage/userData.json", JSON.stringify(userData), (err) => {
             if (err) console.error(err);
         });
- 
+
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
         }
@@ -82,7 +82,7 @@ bot.on("ready", function () {
         var args = message.content.substring(PREFIX.length).split(" ");
 
         switch (args[0].toLowerCase()) {
-            case "mal":                                                 
+            case "mal":
                 var mel = new Discord.RichEmbed()
                     .setTitle("MyAnimeList.net")
                     .setAuthor("NeR0", "https://i.imgur.com/qXbSFYY.png")
