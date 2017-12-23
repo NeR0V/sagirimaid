@@ -63,8 +63,15 @@ bot.on("ready", function () {
             message.channel.send("Todos os comandos foram recarregados!")
             loadCmds()
         }
+        
+        if (message.content === "$loop") { 
+        var interval = setInterval (function () {
+            message.channel.send("123")
+         }, 1 * 1000); 
+      }
+  });
 
-        if(msg === prefix + "msgenviada") {
+        if(msg === prefix + "mystat") {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
         }
 
