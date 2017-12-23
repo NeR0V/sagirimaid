@@ -1,0 +1,41 @@
+Comandos:
+
+1.Conversas(sem prefixo):
+
+eae
+tudo bem?
+tudo bom?
+元気だったかいさぎり？
+Você é minha irmã?
+LUL
+talarico
+oi
+-------------------------
+
+2.Diversão(com prefixo):
+
+.info - Informações do bot.
+.dado - Coloque uma frase na frente e o bot responderá sim, não ou talvez.
+.menota - Não.
+tdaily - Coleta os créditos diário.
+tslot (valor) - Aposta na roleta.
+tcredits - Ver os créditos que você tem.
+
+-------------------------
+
+3.Utilitários:
+
+.mal - MyAnimeList do NeR0.
+tanime(nome do anime) - Mostra o anime em uma página do MyAnimeList.
+
+-------------------------
+
+4.Música:
+
+!play (link) - Toca a música.
+!pause - Para a música.
+!resume - Volta a música.
+!queue - Mostra a fila da música.
+!skip - Votação para pular a música atual.
+
+--------------------------
