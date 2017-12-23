@@ -14,7 +14,6 @@ var bot = new Discord.Client();
 var fs = require("fs");
 
 var userData = JSON.parse(fs.readFileSync("Storage/userData.json", "utf8"));
-var commandsList = JSON.parse(fs.readFileSync("Storage/commands.txt", "utf8"));
 
 bot.on("guildMemberAdd", function (member) {
     member.guild.channels.find("name", "chat").sendEmbed(embed);
@@ -41,10 +40,6 @@ bot.on("ready", function () {
         var msg = message.content;
         var sender = message.author;
         var prefix = "."
-
-        if (msg === prefix + "help") {
-          message.channel.send(commandsList)
-        }
 
         if (sender.id === "393547358387830794") {
             return;
