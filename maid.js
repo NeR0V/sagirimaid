@@ -51,7 +51,7 @@ bot.on("ready", function () {
             message.author.send("Essa palavra é banido deste servidor, não use ela!")
         }
 
-        if(msg === prefix + "msgenviada") {
+        if(msg === prefix + "stats") {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
         }
 
