@@ -17,6 +17,8 @@ var userData = JSON.parse(fs.readFileSync("Storage/userData.json", "utf8"));
 
 function loadCmds () {
 
+    delete require.cache[require.resolve("./commands/${f}")];
+
 bot.on("guildMemberAdd", function (member) {
     member.guild.channels.find("name", "chat").sendEmbed(embed);
     var embed = new Discord.RichEmbed()
@@ -62,7 +64,7 @@ bot.on("ready", function () {
             loadCmds()
         }
 
-        if(msg === prefix + "mystats") {
+        if(msg === prefix + "msgenviada") {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
         }
 
@@ -130,6 +132,11 @@ bot.on("ready", function () {
                     .setImage("https://78.media.tumblr.com/37f88d4b8d538adf80049d5ffefad2e1/tumblr_ouqgu127i01wwga3uo1_500.gif");
                 message.channel.sendEmbed(embed);
                 break;
+
+                if(command === "ping") {
+                  const m = await message.channel.send("O seu ping?");
+    m.edit("Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. Seu ping é de ${Math.round(client.ping)} ms!");
+  }
 
         }
     });
