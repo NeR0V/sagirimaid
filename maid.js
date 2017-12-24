@@ -133,13 +133,6 @@ bot.on("ready", function () {
                 message.channel.sendEmbed(embed);
                 break;
 
-const command = args.shift().toLowerCase();
-
-                if(command === "ping") {
-                  const m = await message.channel.send("Ping?");
-    m.edit("Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. Seu ping é de ${Math.round(client.ping)} ms!");
-  }
-
         }
     });
 
