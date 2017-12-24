@@ -134,9 +134,9 @@ bot.on("ready", function () {
                 break;
 
 const command = args.shift().toLowerCase();
-const m = await message.channel.send("Ping?");
 
-                if(command === prefix + "ping") {
+                if(command === "ping") {
+                  const m = await message.channel.send("Ping?");
     m.edit("Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. Seu ping é de ${Math.round(client.ping)} ms!");
   }
 
