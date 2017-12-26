@@ -68,6 +68,10 @@ bot.on("ready", function () {
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
         }
+        
+         if (message.content === "Omae wa mou shindeiru") {
+            message.channel.sendMessage("NANIII??");
+        }
 
         if (message.content === "tudo bom?") {
             message.channel.sendMessage("tudo. e vc? " + message.author.toString());
