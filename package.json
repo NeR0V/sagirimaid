@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Meu bot do discord",
   "main": "maid.js",
+  "servers": [
+          "393478353480581121"
+    ],
   "roleName": "arcoiris",
   "colors": 12,
   "speed": 10000,
