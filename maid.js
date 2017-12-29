@@ -16,6 +16,15 @@ var fs = require("fs");
 var userData = JSON.parse(fs.readFileSync("Storage/userData.json", "utf8"));
 
 bot.on("guildMemberAdd", function (member) {
+
+bot.on("message", funtion (message)
+
+if(msg === prefix + "add") {
+  member.addRole(member.guild.roles.find("name", "Verde"));
+  
+  message.channel.sendMessage("O cor: foi adicionado!");
+}
+
     member.guild.channels.find("name", "chat").sendEmbed(embed);
     var embed = new Discord.RichEmbed()
     .addField("Seja bem-vindo(a) ao servidor NeR0's Playground", "Leia nossas #regras ! " + "É um prazer em recebe-lo " + member.toString() + " !")
@@ -53,10 +62,6 @@ bot.on("ready", function () {
 
         if(msg === prefix + "mystats") {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
-        }
-
-        if(msg === prefix + "add") {
-          message.channel.sendMessage("O cor: foi adicionado!");
         }
 
         if (!userData[sender.id]) userData[sender.id] = {
