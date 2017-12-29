@@ -55,12 +55,8 @@ var userData = JSON.parse(fs.readFileSync("Storage/userData.json", "utf8"));
 
 bot.on("guildMemberAdd", function (member) {
 
-bot.on("message", funtion (message)
-
 if(msg === prefix + "add") {
   member.addRole(member.guild.roles.find("name", "Verde"));
-  
-  message.channel.sendMessage("O cor: foi adicionado!");
 }
 
     member.guild.channels.find("name", "chat").sendEmbed(embed);
