@@ -70,7 +70,7 @@ bot.on("ready", function () {
         }
 
         if (message.content === "tudo bom?") {
-            message.channel.sendMessage("tudo e vc " + message.author.toString() " ?");
+            message.channel.sendMessage("tudo e vc " + message.author.toString() + " ?");
         }
 
         if (message.content === "元気だったかいさぎり？") {
