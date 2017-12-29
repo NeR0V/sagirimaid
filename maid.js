@@ -55,6 +55,11 @@ bot.on("ready", function () {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
         }
 
+        if(msg === prefix + "add") {
+          member.addRole(member.guild.roles.find("name", "Verde"));
+          message.channel.sendMessage("O cor: foi adicionado!")
+        }
+
         if (!userData[sender.id]) userData[sender.id] = {
             messagesSent: 0
         }
@@ -70,7 +75,7 @@ bot.on("ready", function () {
         }
 
         if (message.content === "tudo bom?") {
-            message.channel.sendMessage("tudo e vc " + message.author.toString() + " ?");
+            message.channel.sendMessage("tudo. e vc? " + message.author.toString());
         }
 
         if (message.content === "元気だったかいさぎり？") {
@@ -119,6 +124,8 @@ bot.on("ready", function () {
                     .setImage("https://media.giphy.com/media/IjmMzurYulKEw/giphy.gif");
                 message.channel.sendEmbed(embed);
                 break;
+
+
 
         }
     });
