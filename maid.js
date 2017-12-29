@@ -55,7 +55,7 @@ bot.on("ready", function () {
           message.channel.send("Você tem **" + userData[sender.id].messagesSent + "** mensagens enviadas!")
         }
 
-        if(msg === prefix + "add") 
+        if(msg === prefix + "add") {
           message.channel.sendMessage("O cor: foi adicionado!");
         }
 
