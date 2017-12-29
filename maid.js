@@ -2,6 +2,8 @@
 
 const TOKEN = "MzkzNTQ3MzU4Mzg3ODMwNzk0.DR3XPQ.GxSHTCJ2leKtj8Z3AL7Voj-6vQk";
 const PREFIX = ".";
+const config = require('./package.json');
+
 const size    = config.colors;
 const rainbow = new Array(size);
 
@@ -25,10 +27,10 @@ let place = 0;
 const servers = config.servers;
 
 function changeColor() {
-  for (let index = 0; index < servers.length; ++index) {		
+  for (let index = 0; index < servers.length; ++index) {
     client.guilds.get(servers[index]).roles.find('name', config.roleName).setColor(rainbow[place])
 		.catch(console.error);
-		
+
     if(config.logging){
       console.log(`[ColorChanger] Você mudou a cor para ${rainbow[place]} no servidor: ${servers[index]}`);
     }
