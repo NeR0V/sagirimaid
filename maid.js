@@ -68,13 +68,9 @@ bot.on("ready", function () {
         if (message.content === "eae") {
             message.channel.sendMessage("suave?");
         }
-        
-         if (message.content === "Omae wa mou shindeiru") {
-            message.channel.sendMessage("NANIII??");
-        }
 
         if (message.content === "tudo bom?") {
-            message.channel.sendMessage("tudo. e vc? " + message.author.toString());
+            message.channel.sendMessage("tudo e vc " + message.author.toString() " ?");
         }
 
         if (message.content === "元気だったかいさぎり？") {
@@ -118,9 +114,9 @@ bot.on("ready", function () {
                 var embed = new Discord.RichEmbed()
                     .addField("Seja bem-vindo(a) ao servidor NeR0's Playground", "Leia nossas #regras ! " + "É um prazer em recebe-lo " + message.author.toString() + " !")
                     .addField("Dono", "NeR0", true)
-                    .addField("Feliz natal à todos!", "Boas Festas", true)
+                    .addField("Feliz ano novo!", "Boas Festas", true)
                     .setColor(0x8807df)
-                    .setImage("https://78.media.tumblr.com/37f88d4b8d538adf80049d5ffefad2e1/tumblr_ouqgu127i01wwga3uo1_500.gif");
+                    .setImage("https://media.giphy.com/media/IjmMzurYulKEw/giphy.gif");
                 message.channel.sendEmbed(embed);
                 break;
 
